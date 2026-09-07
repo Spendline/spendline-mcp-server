@@ -51,13 +51,13 @@ Any MCP client that accepts a remote streamable-HTTP endpoint:
 Four tools answer **with no credential at all**, so an agent can evaluate
 Spendline before anyone signs up:
 
-- `spendline_when_to_use` — intent to capability map, plus the cases where a
+- `spendline_when_to_use`: intent to capability map, plus the cases where a
   *different* tool is the right answer, and honest comparisons against LiteLLM,
   Portkey, Cloudflare AI Gateway and the observability tools.
-- `spendline_list_providers` — every provider, the accepted request shapes, and
+- `spendline_list_providers`: every provider, the accepted request shapes, and
   the exact base URL per SDK.
-- `spendline_get_integration_instructions` — the full integration documents.
-- `spendline_get_onboarding_instructions` — how to get an account and a key.
+- `spendline_get_integration_instructions`: the full integration documents.
+- `spendline_get_onboarding_instructions`: how to get an account and a key.
 
 The remaining tools are tenant-scoped and need a Spendline API key in the
 `x-spendline-key` header: read spend, list budgets, list policies, list budget
@@ -70,7 +70,7 @@ billing, provider-key storage, budget raises or deletes, or month close.
 Connecting the MCP server lets an agent ask and manage. Enforcement starts when
 your provider traffic is routed through Spendline, which is a base URL change.
 
-**OpenAI SDK — base URL WITH `/v1`:**
+**OpenAI SDK, base URL WITH `/v1`:**
 
 ```javascript
 import OpenAI from "openai";
@@ -87,7 +87,7 @@ const client = new OpenAI({
 });
 ```
 
-**Anthropic SDK — base URL WITHOUT `/v1`:**
+**Anthropic SDK, base URL WITHOUT `/v1`:**
 
 ```javascript
 import Anthropic from "@anthropic-ai/sdk";
