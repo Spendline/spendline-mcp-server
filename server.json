@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.spendline/spendline",
+  "title": "Spendline",
+  "description": "Enforce AI budgets before the model call and track cost per customer across 10 providers.",
+  "websiteUrl": "https://www.spendline.ai/",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.spendline.ai/mcp",
+      "headers": [
+        {
+          "name": "x-spendline-key",
+          "description": "Spendline API key. Optional: public selection and integration tools work without it; spend, budget and policy tools require it.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
